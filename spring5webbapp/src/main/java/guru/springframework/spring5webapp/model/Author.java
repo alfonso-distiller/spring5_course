@@ -10,11 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
+@EqualsAndHashCode(of = {"id"})
 public class Author {
 	
 	@Id

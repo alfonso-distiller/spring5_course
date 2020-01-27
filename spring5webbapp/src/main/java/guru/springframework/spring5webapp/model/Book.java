@@ -12,11 +12,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @Entity
+@EqualsAndHashCode(of = {"id"})
+@ToString(exclude = {"authors"})
 public class Book {
 
 	@Id
