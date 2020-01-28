@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,7 +29,10 @@ public class Book {
 	private Long id;
 	private String title;
 	private String isbn;
-	private String publisher;
+	
+	@OneToOne
+	@JoinColumn(name = "publisher_id", referencedColumnName = "id")
+	private Publisher publisher;
 
 	@ManyToMany
 	@JoinTable(name = "author_book", 
@@ -37,11 +41,10 @@ public class Book {
 	)
 	private Set<Author> authors = new HashSet<>();
 
-	public Book(String title, String isbn, String publisher) {
+	public Book(String title, String isbn) {
 		super();
 		this.title = title;
 		this.isbn = isbn;
-		this.publisher = publisher;
 	}
 	
 	public void addAuthor(Author author) {
