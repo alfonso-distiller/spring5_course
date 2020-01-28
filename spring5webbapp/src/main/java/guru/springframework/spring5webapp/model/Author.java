@@ -34,4 +34,8 @@ public class Author {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+	
+	public void addBook(Book book) {
+		this.books.add(book);
+	}
 }

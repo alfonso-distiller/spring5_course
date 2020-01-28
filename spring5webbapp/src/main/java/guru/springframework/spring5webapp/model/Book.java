@@ -43,4 +43,8 @@ public class Book {
 		this.isbn = isbn;
 		this.publisher = publisher;
 	}
+	
+	public void addAuthor(Author author) {
+		this.authors.add(author);
+	}
 }
