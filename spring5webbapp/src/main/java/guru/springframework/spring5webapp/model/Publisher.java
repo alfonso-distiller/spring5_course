@@ -8,11 +8,13 @@ import javax.persistence.OneToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
 @Data
 @EqualsAndHashCode(of = {"id"})
+@NoArgsConstructor
 @ToString(exclude = {"book"})
 public class Publisher {
 	@Id
